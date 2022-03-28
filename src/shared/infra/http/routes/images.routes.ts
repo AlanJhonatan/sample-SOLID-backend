@@ -10,13 +10,6 @@ const insertImageController = new InsertImageController();
 
 const upload = multer(config);
 
-imagesRoutes.get(
-  '/images',
-  async (request: Request, response: Response): Promise<Response> => {
-    return response.json({ route: 'image' });
-  }
-);
-
 imagesRoutes.post(
   '/insert',
   upload.array('images'),

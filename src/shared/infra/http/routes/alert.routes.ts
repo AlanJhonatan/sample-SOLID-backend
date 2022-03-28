@@ -1,15 +1,10 @@
 import { SendSampleMailController } from '@modules/alert/useCases/sendSampleMail/SendSampleMailController';
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
 
 const alertRoutes = Router();
 
-const sendSampleMail = new SendSampleMailController();
+const sendSampleMailController = new SendSampleMailController();
 
-alertRoutes.get(
-  '/alerts',
-  async (request: Request, response: Response): Promise<Response> => {
-    return response.json({ route: 'alerts' });
-  }
-);
+alertRoutes.get('/send', sendSampleMailController.handle);
 
 export { alertRoutes };
