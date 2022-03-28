@@ -1,6 +1,6 @@
 import { inject, injectable } from 'tsyringe';
 
-import { IStorageProvider } from '../../../../shared/container/providers/StorageProvider/IStorageProvider';
+import { IStorageProvider } from '@shared/container/providers/StorageProvider/IStorageProvider';
 
 @injectable()
 class InsertImageUseCase {

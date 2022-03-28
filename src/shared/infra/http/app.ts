@@ -2,7 +2,8 @@ import express, { NextFunction, Request, Response } from 'express';
 
 import 'express-async-errors';
 import 'reflect-metadata';
-import { AppError } from '../../errors/AppError';
+import { AppError } from '@shared/errors/AppError';
+
 import { router } from './routes';
 
 import '../../container';
