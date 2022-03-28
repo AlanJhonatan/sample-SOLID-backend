@@ -1,0 +1,9 @@
+node_modules/
+.vscode/
+.docker/
+
+temp/*
+storage/*
+
+!storage/.gitkeep
+!temp/.gitkeep
