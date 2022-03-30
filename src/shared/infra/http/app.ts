@@ -7,11 +7,15 @@ import { AppError } from '@shared/errors/AppError';
 import { router } from './routes';
 
 import '../../container';
+import upload from '@config/upload';
+import { resolve } from 'path';
 
 const app = express();
 
 app.use(express.json());
 app.use('/api', router);
+
+app.use('/images', express.static(resolve(upload.path, '..', 'storage', 'defaults')))
 
 // (express-async-errors)
 // Error Middleware
