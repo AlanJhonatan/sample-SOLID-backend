@@ -14,9 +14,9 @@ class InsertImageController {
     const imagesName = images.map((image) => image.filename);
 
     const insertImageUseCase = container.resolve(InsertImageUseCase);
-    await insertImageUseCase.execute(imagesName);
+    const links = await insertImageUseCase.execute(imagesName);
 
-    return response.status(201).send();
+    return response.status(201).json(links);
   }
 }
 

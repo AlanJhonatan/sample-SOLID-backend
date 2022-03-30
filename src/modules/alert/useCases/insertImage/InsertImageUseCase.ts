@@ -9,10 +9,15 @@ class InsertImageUseCase {
     private storageProvider: IStorageProvider
   ) {}
 
-  async execute(images: string[]) {
-    images.map(async (image) => {
-      await this.storageProvider.save(image, 'defaults');
+  async execute(images: string[]): Promise<string[]> {
+    const linksPromise = images.map(async (image) => {
+      const link = await this.storageProvider.save(image, 'defaults');
+      return link;
     });
+
+    const links = await Promise.all(linksPromise);
+
+    return links;
   }
 }
 
