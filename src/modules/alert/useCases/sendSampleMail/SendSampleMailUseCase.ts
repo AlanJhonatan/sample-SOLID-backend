@@ -11,7 +11,7 @@ class SendSampleMailUseCase {
 
   async execute() {
     await this.mailProvider.sendMail({
-      to: 'Alan França <afranca2@lenovo.com>',
+      to: 'afranca2@lenovo.com',
       subject: 'Just an sample email',
       body: '<h1>Sample body</h1>',
     });
